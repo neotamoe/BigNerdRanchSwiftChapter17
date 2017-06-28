@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8701AADF1F01F89200105991 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701AADE1F01F89200105991 /* Monster.swift */; };
 		8701AAE11F01F9AB00105991 /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701AAE01F01F9AB00105991 /* Zombie.swift */; };
-		8701AAE31F01FBAC00105991 /* ZombieBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701AAE21F01FBAC00105991 /* ZombieBoss.swift */; };
 		8770DDC31F01420E00AA6926 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770DDC21F01420E00AA6926 /* main.swift */; };
 		8770DDCA1F01438900AA6926 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770DDC91F01438900AA6926 /* Town.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		8701AADE1F01F89200105991 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		8701AAE01F01F9AB00105991 /* Zombie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
-		8701AAE21F01FBAC00105991 /* ZombieBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZombieBoss.swift; sourceTree = "<group>"; };
 		8770DDBF1F01420E00AA6926 /* BNRSwiftChapter15MonsterTown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BNRSwiftChapter15MonsterTown; sourceTree = BUILT_PRODUCTS_DIR; };
 		8770DDC21F01420E00AA6926 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8770DDC91F01438900AA6926 /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 			children = (
 				8770DDC21F01420E00AA6926 /* main.swift */,
 				8701AAE01F01F9AB00105991 /* Zombie.swift */,
-				8701AAE21F01FBAC00105991 /* ZombieBoss.swift */,
 				8701AADE1F01F89200105991 /* Monster.swift */,
 				8770DDC91F01438900AA6926 /* Town.swift */,
 			);
@@ -133,7 +130,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8770DDC31F01420E00AA6926 /* main.swift in Sources */,
-				8701AAE31F01FBAC00105991 /* ZombieBoss.swift in Sources */,
 				8701AAE11F01F9AB00105991 /* Zombie.swift in Sources */,
 				8701AADF1F01F89200105991 /* Monster.swift in Sources */,
 				8770DDCA1F01438900AA6926 /* Town.swift in Sources */,
