@@ -1,28 +1,40 @@
-//
-//  Zombie.swift
-//  BNRSwiftChapter15MonsterTown
-//
-//  Created by Neota Moe on 6/27/17.
-//  Copyright © 2017 Neota Moe. All rights reserved.
-//
 
 import Foundation
 
 class Zombie: Monster {
-    // this is a type method
-//    class func makeSpookyNoise() -> String {
-//        return "Brains..."
-//    }
-    
-    // computed type property
+
     override class var spookyNoise: String {
         return "Brains..."
     }
     
-    var walksWithLimp = true
+//    var walksWithLimp = true
+    var walksWithLimp: Bool
+    
+//    private(set) var isFallingApart = false
+    private(set) var isFallingApart: Bool
+    init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
+        walksWithLimp = limp
+        isFallingApart = fallingApart
+        super.init(town: town, monsterName: monsterName)
+    }
+    
+    convenience init(limp: Bool, fallingApart: Bool) {
+        self.init(limp: limp, fallingApart: fallingApart, town: nil, monsterName: "Fred")
+        if walksWithLimp {
+            print("This zombie has a bad knee.")
+        }
+    }
+    
+    required init(town: Town?, monsterName: String) {
+        walksWithLimp = false
+        isFallingApart = false
+        super.init(town: town, monsterName: monsterName)
+    }
 
-    // access control
-    private(set) var isFallingApart = false
+    // deinitialization is process of removing instances of a class from memory when no longer needed.  limited to reference types and NOT value types.  class can only have one deinitializer and takes no arguments.
+    deinit {
+        print("Zombie named \(name) is no longer with us.")
+    }
     
     final override func terrorizeTown() {
         if !isFallingApart {

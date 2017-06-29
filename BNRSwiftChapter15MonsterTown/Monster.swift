@@ -1,24 +1,20 @@
-//
-//  Monster.swift
-//  BNRSwiftChapter15MonsterTown
-//
-//  Created by Neota Moe on 6/27/17.
-//  Copyright © 2017 Neota Moe. All rights reserved.
-//
+// CLASS INITIALIZATION
+// classes add concept of designated and convenience initializers
+// initializer on a class is either designated or convenience (not both)
+// there isn't a free memberwise initializer for class
+
 
 import Foundation
 
 class Monster {
-    // classes can have static properties at the type level
-    // static properties can't be overridden by a subclass
     static let isTerrifying = true
-    // class type properties can be overriden by subclasses...just need to make sure override is in Zombie definition of spookyNoise
+
     class var spookyNoise: String {
         return "Grrrr"
     }
     
     var town: Town?
-    var name = "Monster"
+    var name: String
     var victimPool: Int {
         get{
             return town?.population ?? 0
@@ -26,6 +22,13 @@ class Monster {
         set(newVictimPool) {
             town?.population = newVictimPool
         }
+    }
+    // this is a designated initializer; if class has a superclass its designated initializer also must call its superclass's designated initializer
+    // designated initializers are unadorned (no extra words like a convenience initializer)
+    // adding required in front of init requires its subclasses to provide a specific initializer
+    required init(town: Town?, monsterName: String) {
+        self.town = town
+        name = monsterName
     }
     
     func terrorizeTown() {

@@ -1,30 +1,37 @@
-//
-//  main.swift
-//  BNRSwiftChapter15MonsterTown
-//
-//  Created by Neota Moe on 6/27/17.
-//  Copyright © 2017 Neota Moe. All rights reserved.
-//
 
+// INITIALIZERS
 
 import Foundation
 
-var myTown = Town()
-let myTownSize = myTown.townSize
+// here we are replacing the empty initializer with a default memberwise initializer.
+// even though population and numberOfStoplights is already defined in Town.swift, these values replace the default values
+//var myTown = Town(region: "West", population: 10_000, stoplights: 6)
+//myTown.printDescription()
+
+var myTown = Town(population: 0, stoplights: 6)
+myTown?.printDescription()
+
+let myTownSize = myTown?.townSize
 print(myTownSize)
 
-// these lines demo that the lazy property nature is only calculated once
-myTown.changePopulation(by: 1_000_000)
-print("Size: \(myTown.townSize); population: \(myTown.population)")
+myTown?.changePopulation(by: 1_000_000)
+print("Size: \(myTown?.townSize); population: \(myTown?.population)")
 
-let fredTheZombie = Zombie()
-fredTheZombie.town = myTown
-fredTheZombie.terrorizeTown()
-fredTheZombie.town?.printDescription()
+// classes do not typically inherit their superclass's initializers
+// there are cases where they do: 1) if the subclass does not define any designated initializers, it will inherit its superclass designated initializers, 2) if the subclass implements all of the superclass's designated initializers (either explicitly or via inheritance) it will inherit all of its superclass's convenicence initializers
+// zombie is inheriting monster type's sole designated initializer b/c it provides default values for all new properties it adds and it does not define its own designated initializer
+// this next line gives a compiler error
+//let fredTheZombie = Zombie()
+var fredTheZombie: Zombie? = Zombie (limp: false, fallingApart: false, town: myTown, monsterName: "Fred")
+fredTheZombie?.terrorizeTown()
+fredTheZombie?.town?.printDescription()
 
-print("Victim pool: \(fredTheZombie.victimPool)")
-fredTheZombie.victimPool = 500
-print("Victim pool: \(fredTheZombie.victimPool)")
+var convenientZombie = Zombie(limp: true, fallingApart: false)
+
+print("Victim pool: \(fredTheZombie?.victimPool)")
+fredTheZombie?.victimPool = 500
+print("Victim pool: \(fredTheZombie?.victimPool)")
+fredTheZombie = nil
 
 print(Zombie.spookyNoise)
 
